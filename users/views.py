@@ -59,3 +59,7 @@ def logout_view(request):
     logout(request)
     return redirect('login')
 
+
+def update_profile(request):
+    """Update a user profile view"""
+    return render(request, 'users/update_profile.html')

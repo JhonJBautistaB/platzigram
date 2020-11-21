@@ -13,9 +13,11 @@
             <form action="{% url 'update_profile' %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
 
-                {% if form.errors %}
-                    <p>{{ form.errors }}</p>
-                {% endif %}
+                {% for field in form %}
+                    {% if field.errors %}
+                        <p class="alert alert-danger">{{ field.label }}: {{ field.errors|striptags}}</p>
+                    {% endif %}
+                {% endfor %}
 
                 <div class="media">
                     {% if profile.picture %}

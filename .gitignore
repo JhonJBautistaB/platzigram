@@ -5,4 +5,4 @@ posts/__pycache__
 posts/migrations
 users/__pycache__
 users/migrations
-
+.vscode/
